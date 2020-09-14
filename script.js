@@ -152,3 +152,11 @@ document.body.onmousemove = function(e) {
 const projectsHeight = $(".projects").height()+200;
 
 $(".vertical-line").css("height", projectsHeight + "px");
+
+$(window).scroll(function() {
+  if($(window).scrollTop() + $(window).height() == $(document).height()) {
+      $('.scroll').css('height','200.5px');
+  } else {
+    $('.scroll').css('height','45%');
+  }
+});
