@@ -10,6 +10,7 @@
   body {
     min-height: 100%; /* requires for 'mix-blend-mode' */
     cursor: none;
+    
     }
 
   html {
@@ -29,23 +30,14 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
-    background-color: white;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
+    background-color: rgb(242, 243, 227);
+    color: black;
+    
 }
 
-.mask {
-  background: 
-    radial-gradient(circle 20px 
-                    at var(--x,0) var(--y,0), 
-                    #fff 99%,black 100%) 
-                    fixed;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color:transparent;
-  -webkit-text-fill-color: transparent;
-  z-index: 1000;
-}
+
 
 html::before {
   content:"";
@@ -75,6 +67,21 @@ a:hover {
   background-color: white;
   z-index: 10;
 }
+
+/* 
+.mask {
+  background: 
+    radial-gradient(circle 20px 
+                    at var(--x,0) var(--y,0), 
+                    #fff 99%,black 100%) 
+                    fixed;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color:transparent;
+  -webkit-text-fill-color: transparent;
+  z-index: 1000;
+}
+*/
 
 /* header */
 
@@ -147,13 +154,18 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    font-size: 6vw;
+    font-size: 6.5vw;
+
     line-height: calc(8.17308vw - 1.07692px);
    /* transform: scale(1, 1.2);
     -webkit-transform: scale(1, 1.2);
     -moz-transform: scale(1, 1.2);
     -ms-transform: scale(1, 1.2);
     -o-transform: scale(1, 1.2);*/
+}
+
+.title p {
+  color: black;
 }
 
 .scroll {
@@ -202,7 +214,7 @@ a:hover {
   text-align: center;
   width: 8px;
   height: 8px;
-  background-color: purple;
+  background-color: black;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -287,7 +299,8 @@ a:hover {
   flex-wrap: wrap;
   display: flex;
   flex-direction: row;
-  padding: 0 12%;
+  padding: 3% 8%;
+  border: 1px solid rgba(0, 0, 0, 0.301);
 }
 
 .info div p:nth-child(1){
@@ -367,13 +380,14 @@ a:hover {
 }
 
 .banner {
- 
+border: 1px solid rgba(0, 0, 0, 0.267);
+ width: 70vw;
+ padding: 3% 4%;
 }
 
 .banner{
   overflow: hidden;
-  margin-top: 30%;
-  width: 100%;
+  margin: 30% auto 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -407,7 +421,7 @@ a:hover {
   padding: 0;
   position: relative;
   white-space: nowrap;
-  font-size: 4em;
+  font-size: 3em;
   right: 400px;
   padding: 0 1rem;
 }
@@ -452,11 +466,25 @@ a:hover {
   right: 0;
   height: 25px;
   width: 25px;
-  background-color: purple;
-  border: 1px solid black;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.363);
   border-radius: 50%;
   display: inline-block;
   position: relative;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.banner:hover .dot {
+  background-color: rgb(0, 0, 0);
+  border: none;
 }
 
 .projects {
@@ -486,7 +514,7 @@ a:hover {
     width: 1px;
     height: 1000px;
     z-index: -1;
-    background-color: rgba(128, 0, 128, 0.411);
+    background-color: rgba(0, 0, 0, 0.219);
 }
 
   
@@ -736,8 +764,8 @@ a:hover {
 
 
 .project {
-    /* background-color: transparent; */
-    display: flex;
+    /*background-color: transparent;
+    */display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -745,15 +773,15 @@ a:hover {
     z-index: 0;
     cursor: pointer;
     width: 100vw;
-    padding: 0 5vw;
     height: 500px;
     width: 100vw;
     position: relative;
+    padding: 0 5vw;
 }
 
 .project-left {
-  margin-left: 1vw;
-  width: 34vw;
+  margin: 0 1vw;
+  width: 33vw;
   z-index: 10;
 }
 
@@ -762,13 +790,16 @@ a:hover {
   position: absolute;
   width: 20vw;
   left: 40vw;
-  background-color: rgb(255, 255, 255);
   height: auto;
   text-align: center;
   justify-self: center;
   align-self: center;
   z-index: -100;
+  background-color: rgb(242, 243, 227);
+  color: black;
 }
+
+
 
 .project-right {
   width: 30vw;
@@ -788,16 +819,17 @@ a:hover {
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
+    
 }
 
 .project-image video {
-  background-color: black;
- /* border: 2px solid black;
+  background-color: rgba(0, 0, 0, 0.336);
+ border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 1%;
   -webkit-border-radius: 1%;
   -moz-border-radius: 1%;
   -ms-border-radius: 1%;
-  -o-border-radius: 1%;*/
+  -o-border-radius: 1%;
 }
 
 .project:hover .project-image {
@@ -812,7 +844,7 @@ a:hover {
 .project-middle:hover .bal2 {
 	opacity: 1;
 	border: none;
-	background-color: purple;
+	background-color: black;
 }
  
 .project-klein {
@@ -870,7 +902,8 @@ video {
 footer {
   height: 200px;
   overflow: hidden;
-  background-color: white;
+  background-color: rgb(242, 243, 227);
+    color: black;
   z-index: 5;
     width: 90%;
     margin: 0 5%;

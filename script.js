@@ -135,18 +135,85 @@ function getScrollTop(){
   }
 }
 
+document.querySelector("#darkMode").addEventListener("click", function(){
+  if (document.querySelector("html").style.backgroundColor=== "rgb(242, 243, 227)"){
+    document.querySelector("html").style.backgroundColor = "rgb(41, 43, 42)";
+    document.querySelector("footer").style.backgroundColor = "rgb(41, 43, 42)";
+    document.querySelector("html").style.color = "rgb(150, 189, 182)";
+    document.querySelector(".bal").style.backgroundColor = "white";
+    document.querySelector(".scroll").style.backgroundColor = "rgb(150, 189, 182)";
+    document.querySelector(".vertical-line").style.backgroundColor = "rgb(150, 189, 182)";
+    const sociales = document.querySelectorAll(".sociale a");
+    for (title of sociales){
+      title.style.color = "rgb(150, 189, 182)";
+    }
+    const titles = document.querySelectorAll(".title p");
+    for (title of titles){
+      title.style.color = "rgb(150, 189, 182)";
+    }
+    const headers = document.querySelectorAll(".header a");
+    for (title of headers){
+      title.style.color = "rgb(150, 189, 182)";
+    }
+    document.querySelector("html").style.borderColor = "rgb(150, 189, 182)";
+    const middles = document.querySelectorAll(".project-middle");
+    for (middle of middles){
+      middle.style.backgroundColor = "rgb(41, 43, 42)";
+      middle.style.color = "rgb(150, 189, 182)";
+    }
+    const borders = document.querySelectorAll("div");
+    for (middle of borders){
+      middle.style.borderColor = "rgb(150, 189, 182)";
+    }
+    document.querySelector("footer").style.borderColor = "rgb(150, 189, 182)";
+    document.querySelector("footer").style.color = "rgb(150, 189, 182)";
+  } 
+  else {
+    document.querySelector(".bal").style.backgroundColor = "black";
+    document.querySelector(".scroll").style.backgroundColor = "black";
+    document.querySelector("html").style.backgroundColor = "rgb(242, 243, 227)";
+    document.querySelector("html").style.color = "black";
+    document.querySelector(".header").style.color = "black";
+    document.querySelector(".sociale").style.color = "black";
+    document.querySelector("html").style.borderColor = "rgba(0, 0, 0, 0.301)"
+    const middles = document.querySelectorAll(".project-middle");
+    for (middle of middles){
+      middle.style.backgroundColor = "rgb(242, 243, 227)";
+      middle.style.color = "black";
+  }
+    const sociales = document.querySelectorAll(".sociale a");
+    for (title of sociales){
+      title.style.color = "black";
+    }
+    const titles = document.querySelectorAll(".title p");
+    for (title of titles){
+      title.style.color = "black";
+    }
+    const headers = document.querySelectorAll(".header a");
+    for (title of headers){
+      title.style.color = "black";
+    }
+    document.querySelector("html").style.borderColor = "black";
+    const borders = document.querySelectorAll("div");
+    for (middle of borders){
+      middle.style.borderColor = "black";
+    }
+    document.querySelector("footer").style.backgroundColor = "rgb(242, 243, 227)";
+    document.querySelector("footer").style.borderColor = "black";
+    document.querySelector("footer").style.color = "black";
+}});
 
 document.body.onmousemove = function(e) {
   document.documentElement.style.setProperty('--x',(e.clientX)+'px');
   document.documentElement.style.setProperty('--y',(e.clientY)+'px');
-  /*
+
   const banners = document.querySelectorAll(".banner div a");
   for (item of banners){
     item.style.right = Math.max(200- 0.30*e.clientX) + "px",0;}
   const spans = document.querySelectorAll(".banner div span");
   for (span of spans){
     span.style.right = Math.max(200- 0.30*e.clientX) + "px",0;
-  } */
+  } 
 }
 
 const projectsHeight = $(".projects").height()+200;
